@@ -6,25 +6,16 @@ const HelloText=({children,...otherProps})=>(
   <Text {...otherProps}>{children}</Text>
 );
 
-export default class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      expanded: false
-      }
-  }
-
-  render =()=>{
-    return(
-    <View style={styles.container}>
-    <HelloText>Hola Capgemini!</HelloText>
-    <HelloText style={styles.text}> 
-    Empezando un viaje sin retorno, a divertirse y no complicarse
-    </HelloText>
-    <StatusBar style="auto" />
-  </View>)
-  };
-}
+const App = () =>(
+   <View style={styles.container}>
+      <HelloText>Hola Capgemini!</HelloText>
+      <HelloText style={styles.text}> 
+      Empezando un viaje sin retorno, a divertirse y no complicarse
+      </HelloText>
+      <StatusBar style="auto" />
+    </View>
+);
+export default App;
 
 const styles = StyleSheet.create({
   container: {
