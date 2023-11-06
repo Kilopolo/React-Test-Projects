@@ -1,39 +1,21 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import styles from './styles';
 
-const HelloText=({children,...otherProps})=>(
-  <Text {...otherProps}>{children}</Text>
-);
+export default function App() {
 
-export default class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      expanded: false
-      }
-  }
-
-  render =()=>{
-    return(
+  return (
     <View style={styles.container}>
-    <HelloText>Hola Capgemini!</HelloText>
-    <HelloText style={styles.text}> 
-    Empezando un viaje sin retorno, a divertirse y no complicarse
-    </HelloText>
-    <StatusBar style="auto" />
-  </View>)
-  };
+      <View style={styles.box}>
+        <Text style={styles.boxText}>Nro1  </Text>
+      </View>
+      <View style={styles.box}>
+        <Text style={styles.boxText}>Nro2 </Text>
+      </View>
+      <View style={styles.box}>
+        <Text style={styles.boxText}>Nro2 </Text>
+      </View>
+    </View>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text:{
-    marginTop: '5%'
-  }
-});
