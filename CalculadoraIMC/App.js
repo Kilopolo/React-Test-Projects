@@ -79,34 +79,38 @@ const App = () => {
         source={require("./BKG.jpg")}
         style={styles.backgroundImage}
       >
-        <Text style={styles.titulo}>IMC CALCULATOR</Text>
-        <Text style={styles.subtitulo}>Ligero como una nube</Text>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            placeholder="Altura (cm)"
-            onChangeText={(text) => setAltura(text)}
-            keyboardType="numeric"
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Peso (kg)"
-            onChangeText={(text) => setPeso(text)}
-            keyboardType="numeric"
-          />
-          {/* <Button title="Calcular IMC" onPress={calcularIMC} /> */}
-          <CloudButton onPress={calcularIMC} />
-        </View>
-        {imc !== null && (
-          <View style={styles.resultContainer}>
-            <Text style={styles.resultText}>Tu IMC: {imc}</Text>
-            <Text style={styles.resultText}>Estado: {mensaje}</Text>
+        <View style={styles.blurContainer}>
+          <View style={styles.blur}>
+            <Text style={styles.titulo}>IMC CALCULATOR</Text>
+            <Text style={styles.subtitulo}>Ligero como una nube</Text>
+            <View style={styles.inputContainer}>
+              <TextInput
+                style={styles.input}
+                placeholder="Altura (cm)"
+                onChangeText={(text) => setAltura(text)}
+                keyboardType="numeric"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Peso (kg)"
+                onChangeText={(text) => setPeso(text)}
+                keyboardType="numeric"
+              />
+              {/* <Button title="Calcular IMC" onPress={calcularIMC} /> */}
+              <CloudButton onPress={calcularIMC} />
+            </View>
+            {imc !== null && (
+              <View style={styles.resultContainer}>
+                <Text style={styles.resultText}>Tu IMC: {imc}</Text>
+                <Text style={styles.resultText}>Estado: {mensaje}</Text>
+              </View>
+            )}
+            <Image
+              source={obtenerImagenFelicitacion(mostrarFelicitacion)}
+              style={styles.image}
+            />
           </View>
-        )}
-        <Image
-          source={obtenerImagenFelicitacion(mostrarFelicitacion)}
-          style={styles.image}
-        />
+        </View>
       </ImageBackground>
     </ScrollView>
   );
@@ -180,6 +184,19 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     resizeMode: "contain",
+    alignSelf: "center",
+    marginBottom: 20,
+    justifyContent: "center",
+  },
+
+  blurContainer: {
+    flex: 1,
+    backgroundColor: "rgba(255, 255, 255, 0.1)", // Fondo blanco semitransparente
+  },
+  blur: {
+    flex: 1,
+    backgroundColor: "transparent", // Fondo transparente para que se vea el fondo de la imagen
+    padding: 20, // Ajusta el espacio interno según tus necesidades
   },
 });
 
