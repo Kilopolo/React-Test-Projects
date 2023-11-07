@@ -1,5 +1,6 @@
 // import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import styles from "./AppStyles"
 
 export default function App() {
   return (
@@ -8,29 +9,10 @@ export default function App() {
         <TextInput style={styles.textInput}>Text here...</TextInput>
         <Button title="Add"></Button>
       </View>
-      <View>
-        <Text>List of goals</Text>
+      <View style={styles.listContainer}>
+        <Text >List of goals</Text>
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container:{
-    // flex: 1,
-    padding:50 
-    
-  },
-  inputContainer:{
-    flexDirection: "row",
-    justifyContent:'space-between',
-
-  },
-  textInput:{
-    borderColor: '#cccccc',
-    borderWidth: 2,
-    width: '80%',
-    marginRight: 8
-
-  }
-});

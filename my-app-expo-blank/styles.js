@@ -35,6 +35,7 @@ export default StyleSheet.create({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-around",
-        alignSelf: "stretch"
+        alignSelf: "stretch",
+        borderLeftColor: '#dddddd'
       }
 })
