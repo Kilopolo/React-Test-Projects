@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -21,5 +22,19 @@ export default StyleSheet.create({
       boxText:{
         color: "darkslategray",
         fontWeight: "bold"
+      },
+      row: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignSelf: "stretch"
+      },
+    
+      column: {
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-around",
+        alignSelf: "stretch"
       }
 })
